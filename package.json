@@ -4,7 +4,7 @@
   "description": "Practical labs for the WAD2 module, BSc. Applied/Software Systems Dev/Forensics",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --exec babel-node ./node-lab1/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,14 @@
   "homepage": "https://github.com/Conor72/wad-api-labs-2020#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
+    "eslint": "^7.13.0",
+    "eslint-plugin-react": "^7.21.5",
     "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "request": "^2.88.2"
   }
 }
