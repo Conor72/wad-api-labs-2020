@@ -3,6 +3,7 @@
 import express from 'express';
 import User from './userModel';
 import jwt from 'jsonwebtoken';
+import movieModel from '../../seedData/movies';
 
 const router = express.Router(); // eslint-disable-line
 
@@ -59,7 +60,7 @@ router.put('/:id',  (req, res, next) => {
 });
 
 
-//Add a favourite. No Error Handling Yet. Can add duplicates too!
+//Add a favourite. Can add duplicates too!
 router.post('/:userName/favourites', async (req, res, next) => {
   const newFavourite = req.body.id;
   const userName = req.params.userName;
@@ -67,7 +68,7 @@ router.post('/:userName/favourites', async (req, res, next) => {
   const user = await User.findByUserName(userName);
   await user.favourites.push(movie._id);
   await user.save(); 
-  res.status(201).json(user); 
+  res.status(201).json(user).catch(next);   //error handling added 
 });
 
 router.get('/:userName/favourites', (req, res, next) => {

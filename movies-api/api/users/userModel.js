@@ -4,12 +4,22 @@ import bcrypt from 'bcrypt-nodejs';
 const Schema = mongoose.Schema;
 
 
+function checkPassword(str)
+  {
+    // Ensures passwords are at least 5 characters long and contain at least one number and one letter
+    var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
+
+    return re.test(str);
+  }
+
 
 const UserSchema = new Schema({
   username: { type: String, unique: true, required: true},
   password: {type: String, required: true },
   favourites: [{type: mongoose.Schema.Types.ObjectId, ref: 'Movies'}]
 });
+
+UserSchema.path('password').validate(checkPassword);
 
 UserSchema.statics.findByUserName = function (username) {
   return this.findOne({ username: username });
