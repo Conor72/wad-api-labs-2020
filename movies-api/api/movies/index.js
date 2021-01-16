@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import express from 'express';
 import {
-  getMovies, getMovie, getMovieReviews
+  getMovies, getMovie, getMovieReviews, getUpcoming
 } from '../tmdb-api';
 import movieModel from './movieModel';
 
@@ -26,6 +26,11 @@ router.get('/:id/reviews', (req, res, next) => {
   .catch((error) => next(error));
 });
 
+router.get('/upcoming', (req, res,next) => {
+  getUpcoming()
+  .then(upcoming => res.status(200).send(upcoming))
+  .catch((error) => next(error));
+});
 
 
 export default router;

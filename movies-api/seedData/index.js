@@ -2,6 +2,7 @@ import userModel from '../api/users/userModel';
 import movieModel from '../api/movies/movieModel';
 import {movies} from './movies.js';
 
+
 const users = [
   {
     'username': 'user1',
@@ -15,7 +16,7 @@ const users = [
 
 // deletes all user documents in collection and inserts test data
 export async function loadUsers() {
-  console.log('load user Data');
+  console.log('load user data');
     try {
       await userModel.deleteMany();
       await users.forEach(user => userModel.create(user));

@@ -16,6 +16,16 @@ export const PublicPage = () => {
     </>
 }
 
+export const Upcoming = () => {
+    const context = useContext(MoviesContext);
+    return <>
+        <h2>Upcoming Movies Data </h2>
+        <div>
+            {context.upcoming.map(upcoming => { return <>{upcoming.id},{upcoming.title}<br /></> })}
+        </div>
+    </>
+}
+
  export const Profile = () => {
     return <h2>My Profile </h2>
 }
