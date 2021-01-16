@@ -26,6 +26,16 @@ export const Upcoming = () => {
     </>
 }
 
+export const TopRated = () => {
+    const context = useContext(MoviesContext);
+    return <>
+        <h2>Top Rated Movies</h2>
+        <div>
+            {context.topRated.map(topRated => { return <>{topRated.id},{topRated.title}<br /></> })}
+        </div>
+    </>
+}
+
  export const Profile = () => {
     return <h2>My Profile </h2>
 }
