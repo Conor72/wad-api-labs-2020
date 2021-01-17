@@ -19,10 +19,6 @@
   },
   "homepage": "https://github.com/Conor72/wad-api-labs-2020#readme",
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-stage-2": "^7.8.3",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
@@ -32,6 +28,9 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
     "chai": "^4.2.0",
     "dotenv": "^8.2.0",
