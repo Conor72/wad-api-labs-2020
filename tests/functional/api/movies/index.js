@@ -1,6 +1,6 @@
 import chai from "chai";
 import request from "supertest";
-import api from "../../../../movies-api/api/movies/index";  // Express API application 
+let api; // Express API application 
 
 const expect = chai.expect;
 
