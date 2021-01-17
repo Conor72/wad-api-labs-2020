@@ -1,6 +1,6 @@
 import chai from "chai";
 import request from "supertest";
-import api from "../../../../index";  // Express API application 
+import api from "../../../../movies-api/api/movies/index";  // Express API application 
 
 const expect = chai.expect;
 
@@ -41,6 +41,47 @@ const movie = {
   vote_count: 9692
 };
 
-describe('Movies endpoint',  () => {
-    // TODO
+describe("Movies endpoint", () => {
+  describe("GET /movies ", () => {
+    it("should return the 2 movies and a status 200", (done) => {
+      request(api)
+        .get("/api/movies")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body.movies).to.be.a("array");
+          expect(res.body.movies.length).to.equal(2);
+          done();
+        });
+    });
+  });
 });
+
+describe("GET /movies/:id", () => {
+  describe("when the id is valid", () => {
+    it("should return the matching movie", () => {
+      return request(api)
+        .get(`/api/movies/${currentMovieId}`)
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(200)
+        .then((res) => {
+          expect(res.body).to.have.property("title", currentMovieTitle);
+        });
+    });
+  });
+  describe("when the id is invalid", () => {
+    it("should return the NOT found message", () => {
+      return request(api)
+        .get("/api/movies/9999")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect({
+          message: "Unable to find movie with id: 9999.",
+          status: 404,
+        });
+    });
+  });
+});
+
