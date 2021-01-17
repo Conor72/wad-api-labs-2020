@@ -91,10 +91,10 @@ Name: Conor Brett
 
 ## Testing
 
-Cypress test for signup testing
-Cypress test for logging in testing 
++Cypress test for signup testing
++Cypress test for logging in testing 
 
-Mocha testing for users and movies - tests\functional\api
++Mocha testing for users and movies - tests\functional\api
 
 ## Continuous Delivery/Deployment.
 
