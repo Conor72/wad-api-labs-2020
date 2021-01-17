@@ -10,7 +10,7 @@ beforeEach(() => {
       cy.get('#password').type('123456')
       cy.get('#password-confirm').type('123456')
       cy.get('.btn').click() 
-      cy.url().should('not.include', '/signup')
+      cy.url().should('not.include', '/movies')
       
     });
   });
