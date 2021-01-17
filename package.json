@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon --exec babel-node ./movies-api/index.js",
-    "test": "mocha "
+    "test": "cross-env NODE_ENV=test mocha "
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.0.2",
+    "cross-env": "^6.0.3",
     "cypress": "^6.2.1",
     "eslint": "^7.14.0",
     "eslint-plugin-react": "^7.21.5",
@@ -37,13 +38,14 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.3",
-    "express": "^4.17.1",
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
+    "@babel/runtime": "^7.6.3",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "loglevel": "^1.7.1",
     "request": "^2.88.2"
   }
 }

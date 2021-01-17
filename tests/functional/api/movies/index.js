@@ -1,8 +1,13 @@
 import chai from "chai";
 import request from "supertest";
-let api; // Express API application 
+
+
 
 const expect = chai.expect;
+
+
+let api; // Express API application 
+
 
 const currentMovieId  = 24428
 const currentMovieTitle = "The Avengers"
@@ -42,6 +47,13 @@ const movie = {
 };
 
 describe("Movies endpoint", () => {
+  beforeEach(() => {
+    api = require("../../../../reactApp/src/index");
+  });
+  afterEach((done) => {
+    delete require.cache[require.resolve("./../../../reactApp/src/index")];
+    done();
+  });
   describe("GET /movies ", () => {
     it("should return the 2 movies and a status 200", (done) => {
       request(api)

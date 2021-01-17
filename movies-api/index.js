@@ -1,5 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+import loglevel from 'loglevel';
+if (process.env.NODE_ENV === 'test') {
+  loglevel.setLevel('warn')
+ } else {
+  loglevel.setLevel('info')
+ }
 import dotenv from 'dotenv';
 import express from 'express';
 import moviesRouter from './api/movies';
@@ -54,7 +60,7 @@ app.use(errHandler);
 
 
 app.listen(port, () => {
-  console.info(`Server running at ${port}`);
+  loglevel.info(`Server running at ${port}`);
 });
 
-export default app;
+module.exports = app;
