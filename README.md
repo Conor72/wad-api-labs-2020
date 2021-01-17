@@ -103,4 +103,6 @@ https://dashboard.heroku.com/apps/conors-movies-api-staging
 
 Integration of Heroku and Gitlab set up but page is not displaying.
 
+Video Demonstration - https://www.youtube.com/watch?v=d-xt1EAC0wc&feature=youtu.be
+
 
