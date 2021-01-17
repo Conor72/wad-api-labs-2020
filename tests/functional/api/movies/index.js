@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import chai from "chai";
 import request from "supertest";
-import api from "../../../../movies-api/index";  // Express API application 
+import api from "../../../../index";  // Express API application 
 
 const expect = chai.expect;
 
@@ -42,20 +41,6 @@ const movie = {
   vote_count: 9692
 };
 
-describe("Movies endpoint", () => {
-    describe("GET /movies ", () => {
-      it("should return the 2 movies and a status 200", (done) => {
-        request(api)
-          .get("/api/movies")
-          .set("Accept", "application/json")
-          .expect("Content-Type", /json/)
-          .expect(200)
-          .end((err, res) => {
-            expect(res.body.movies).to.be.a("array");
-            expect(res.body.movies.length).to.equal(2);
-            done();
-          });
-      });
-    });
+describe('Movies endpoint',  () => {
+    // TODO
 });
-
