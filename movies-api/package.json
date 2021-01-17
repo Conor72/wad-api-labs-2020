@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "npm-run-all clean compile:all",
     "clean": "rimraf ./build && mkdir build",
@@ -17,7 +18,7 @@
     "compile:all": "npm-run-all compile:models compile:seed compile:app compile:db compile:copy",
     "postinstall": "rimraf ./build && npm run compile:all",
     "start": "nodemon --exec babel-node index.js",
-    "test": "cross-env NODE_ENV=test mocha "
+    "test": "mocha "
   },
   "author": "",
   "license": "ISC",

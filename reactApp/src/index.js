@@ -10,6 +10,7 @@ import AuthHeader from "./components/authHeader";
 import AuthProvider from "./context/authContext";
 import MovieProvider from "./context/moviesContext"
 
+
 const App = () => {
   return (
     <BrowserRouter>
