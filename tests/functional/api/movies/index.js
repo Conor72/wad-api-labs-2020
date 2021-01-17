@@ -59,4 +59,3 @@ describe("Movies endpoint", () => {
     });
 });
 
-export default app;

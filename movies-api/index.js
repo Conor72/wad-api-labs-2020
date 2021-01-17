@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import dotenv from 'dotenv';
 import express from 'express';
-import moviesRouter from './api/movies';
+import moviesRouter from './api/movies/index';
 import bodyParser from 'body-parser';
 import './db';
 import usersRouter from './api/users';
@@ -54,3 +55,5 @@ app.use(errHandler);
 app.listen(port, () => {
   console.info(`Server running at ${port}`);
 });
+
+export default app;

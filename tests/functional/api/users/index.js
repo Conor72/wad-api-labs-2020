@@ -1,7 +1,7 @@
 import chai from "chai";
 import request from "supertest";
 const mongoose = require("mongoose");
-import User from "../../../../movies-api/api/users/userModel";
+import User from "../../../../api/users/userModel";
 
 const expect = chai.expect;
 
@@ -37,7 +37,7 @@ describe("Users endpoint", () => {
   });
   beforeEach(async () => {
     try {
-      api = require("../../../../movies-api/api/movies/index");
+      api = require("../../../../index");
       await User.deleteMany({});
       await User.collection.insertMany(users);
     } catch (err) {
